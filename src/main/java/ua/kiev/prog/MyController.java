@@ -65,9 +65,7 @@ public class MyController {
     }
     @RequestMapping(value = "/removeselected", method = RequestMethod.POST)
     public String onRemoveSelected (Model model, @RequestParam("toremove[]") Long[] idToRemove){
-        if (idToRemove.length == 0){
-            return "list";
-        }
+
         for(Long id : idToRemove){
             photos.remove(id);
         }
